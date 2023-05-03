@@ -13,13 +13,22 @@ object OOBasics extends App {
 
 
   val edgarAllanPoe: Writer = new Writer("Edgar Allan", "Poe", 1809)
-  val theRaven: Novel = new Novel("The Raven", 1845, edgarAllanPoe)
-  val theRavenV2: Novel =  theRaven.apply(1999)
+  val impostor: Writer = new Writer("Edgar Allan", "Poe", 1809)
 
-  println(edgarAllanPoe.fullName())
+  val theRaven: Novel = new Novel("The Raven", 1845, edgarAllanPoe)
+  val theRavenV2: Novel =  theRaven.copy(1999)
+
+  println(edgarAllanPoe.fullName)
   println(theRaven.authorAgeWhenReleased())
-  println(theRaven.isWrittenBy())
+  println(theRaven.isWrittenBy(edgarAllanPoe))
+  println(theRaven.isWrittenBy(impostor))
   println(theRavenV2.authorAgeWhenReleased())
+
+  val counter1 = new Counter(40)
+
+  val counter2 = counter1.increment(10)
+
+  val counter3 = counter1.decrement()
 
 }
 
@@ -58,13 +67,26 @@ class Person(name: String, val age: Int) {
  */
 
 class Writer(firstName: String, surname: String, val yearOfBirth: Int) {
-  def fullName(): String = s"$firstName $surname"
+  def fullName: String = s"$firstName $surname"
 }
 
 class Novel(title: String, yearOfRelease: Int, author: Writer) {
-  def apply(yearOfNewVersion: Int) = new Novel(title, yearOfNewVersion, author)
 
-
+  def copy(yearOfNewVersion: Int) = new Novel(title, yearOfNewVersion, author)
   def authorAgeWhenReleased(): Int = yearOfRelease - author.yearOfBirth
-  def isWrittenBy(): String = author.fullName()
+  def isWrittenBy(author: Writer): Boolean = author == this.author
 }
+
+class Counter(n: Int) {
+
+  def currentCount(): Int = n
+
+  def increment(): Counter = new Counter(n+1)
+  def increment(amount: Int): Counter = new Counter(n + amount)
+
+  def decrement(): Counter = new Counter(n-1)
+  def decrement(amount: Int): Counter = new Counter(n - amount)
+
+
+}
+
