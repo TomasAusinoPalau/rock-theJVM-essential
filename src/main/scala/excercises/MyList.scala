@@ -61,7 +61,7 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     else tail.filter(condition)
   }
 
-  override def ++[B >: A](list: MyList[B]): MyList[B] = new Cons(h, t ++ list)
+  override def ++[B >: A](list: MyList[B]): MyList[B] = Cons(h, t ++ list)
   override def flatMap[B](transformer: MyTransformer[A, MyList[B]]): MyList[B] =
     transformer.transform(head) ++ tail.flatMap(transformer)
 
