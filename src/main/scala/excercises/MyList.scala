@@ -23,6 +23,7 @@ abstract class MyList[+A] {
   def flatMap[B](transformer: A => MyList[B]): MyList[B]
 
   // concatenation
+  // test comment
   def ++[B >: A](list: MyList[B]): MyList[B]
 
   def foreach(transformer: A => Unit): Unit
