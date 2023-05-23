@@ -1,2 +1,2 @@
-[debug] Created transactional ClassFileManager with tempDir = /Users/tomasausino/Mosaic/project/mosaic/projects/mosaic/services/mine-rock-the-jvm-udemy/project/target/scala-2.12/sbt-1.0/classes.bak
-[debug] Removing the temporary directory used for backing up class files: /Users/tomasausino/Mosaic/project/mosaic/projects/mosaic/services/mine-rock-the-jvm-udemy/project/target/scala-2.12/sbt-1.0/classes.bak
+[debug] Created transactional ClassFileManager with tempDir = /Users/tomasausino/mine-rock-the-jvm/rock-theJVM-essential/project/target/scala-2.12/sbt-1.0/classes.bak
+[debug] Removing the temporary directory used for backing up class files: /Users/tomasausino/mine-rock-the-jvm/rock-theJVM-essential/project/target/scala-2.12/sbt-1.0/classes.bak
